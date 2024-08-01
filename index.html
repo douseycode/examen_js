@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen JS</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+<style>
+  .navbar-brand {
+  font-size: 28px;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid d-flex justify-content-center">
+      <a class="navbar-brand text-center" href="#">Examen JavaScript</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  
+  
+  <div class="container">
+    <div >
+      <form id="formulaire">
+        <div class="">
+          <label for="prenom" class="form-label">Prénom :</label>
+          <input type="text" class="form-control fay" id="prenom" />
+          <span id="prenomError" class="error"></span>
+        </div>
+
+        <div class="">
+          <label for="nom" class="form-label">Nom :</label>
+          <input type="text" class="form-control fay" id="nom" />
+          <span id="nomError" class="error"></span>
+        </div>
+
+        <div class="">
+          <label for="email" class="form-label">Email :</label>
+          <input type="email" class="form-control fay" id="email" />
+          <span id="emailError" class="error"></span>
+        </div>
+
+        <button id="modifbtn" type="submit" onclick="ajouter(event)" class="btn btn-primary">
+          Enregistrer
+        </button>
+      </form>
+    </div>
+
+    <div class="col-md-4">
+      <table id="tab" class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">PRENOM</th>
+            <th scope="col">NOM</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+       
+        </tbody>
+      </table>
+    </div>
+
+     <div class="col-md-4 vm">
+    <button class="btn btn-dark btn-sm float-end" onclick="Moyenne()" data-toggle="modal" data-target="#myModal">
+      Voir moyenne
+    </button>
+  </div>
+  </div>
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">LISTES DES ETUDIANTS ET LEUR MOYENNE</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <table id="moytab" class="table">
+            <thead>
+              <tr>
+                <th>PRENOM</th>
+                <th>NOM</th>
+                <th>MOYENNE</th>
+                <th>APPRECIATION</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">
+            Quitter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="ajnote">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ajouter Note</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="ajouterNote">
+            <div class="form-group">
+              <label for="matiere">Matière :</label>
+              <select id="lesmatiere" class="form-control" required>
+                <option value=""> Choisir la matiere </option>
+                <option value="Algo">Algo</option>
+                <option value="PHP">PHP</option>
+                <option value="JavaScript">JavaScript</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="note">Note :</label>
+              <input type="number" min="0" max="20" id="pnote" class="form-control" required />
+              <button id="btna" type="button" class="btn btn-success"  onclick="ajouterNote()">Ajouter</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Quitter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="vnotes">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="son_nom"></h5>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <table id="tabnote" class="table">
+
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Quitter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    
+  </script>
+
+    <script src="assets/jquery.slim.min.js"></script>
+    <script src="monjs.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+  </body>
+</html>

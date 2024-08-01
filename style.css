@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+}
+
+#modifbtn{
+  margin-top: 25px;
+}
+
+.error {
+  color: yellow;
+  position: absolute;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.navbar{
+  background-color: green;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  background-color: green;
+  min-height: 340px;
+  width: 90%;
+}
+#formulaire{
+margin-top: 5px;
+}
+label{
+  display: block;
+  margin-top: 15px;
+}
+
+#tab {
+  width: 760px;
+  margin-left: 7%;
+  margin-right: 40%;
+  margin-top: 10px;
+}
+
+.vm{
+  margin-left: 150px;
+  margin-top: 15px;
+}
+#btna{
+  margin-top: 20px;
+}
+#tab button{
+  margin-right: 5px;
+}
+#tab td{
+  color: white;
+}
